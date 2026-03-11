@@ -79,6 +79,9 @@ function main() {
   }
 }
 
-main();
+// Only run CLI entry point when executed directly, not when imported as a module
+if (require.main === module) {
+  main();
+}
 
 module.exports = { add, subtract, multiply, divide };
